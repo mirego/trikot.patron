@@ -37,10 +37,10 @@ Rename package
 `        archivesBaseName = "PatronProjectName-$versionCode"`
 
 - `./android/src/main/java/com/trikot/sample`
-Rename packages to match applicationId 
+Rename packages to match applicationId
 
 - `./android/src/main/AndroidManifest.xml`
-Rename packages to match applicationId 
+Rename packages to match applicationId
 
 - `./android/src/main/res/values/strings.xml`
 ```xml
@@ -52,7 +52,7 @@ Rename packages to match applicationId
 ## iOS
 - `./ios/Podfile`
 ```ruby
-ENV['TRIKOT_FRAMEWORK_NAME']='AirthingsCorentium' 
+ENV['TRIKOT_FRAMEWORK_NAME']='SampleApp'
 pod 'TrikotFrameworkName', :path => '../common'
 ```
 

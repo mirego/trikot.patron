@@ -16,9 +16,9 @@ object Environment {
     enum class Flavor(
         val baseUrl: String
     ) {
-        DEBUG("https://tv5unis-api-ci.dev.mirego.com"),
-        QA("https://tv5unis-api-qa.dev.mirego.com"),
-        STAGING("https://tv5unis-api-staging.dev.mirego.com"),
-        RELEASE("https://api.tv5.ca")
+        DEBUG("https://trikot.dev.mirego.com"),
+        QA("https://trikot.qa.mirego.com"),
+        STAGING("https://trikot.staging.mirego.com"),
+        RELEASE("https://trikot.prod.mirego.com")
     }
 }
