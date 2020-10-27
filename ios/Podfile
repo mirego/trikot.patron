@@ -1,7 +1,9 @@
 require_relative 'podspec_versions.rb'
 
-platform :ios, '11.3'
+platformVersion = '11.3'
+platform :ios, platformVersion
 
+inhibit_all_warnings!
 install! 'cocoapods', :disable_input_output_paths => true
 
 ENV['TRIKOT_FRAMEWORK_NAME']='TrikotFrameworkName'
@@ -13,9 +15,16 @@ target 'iosApp' do
 
   pod 'SwiftLint'
   pod 'TrikotFrameworkName', :path => '../common'
-  pod 'Trikot.http', :git => 'git@github.com:mirego/trikot.http.git', :tag => properties['trikot_http_version'], :inhibit_warnings => true
-  pod 'Trikot.viewmodels', :git => 'git@github.com:mirego/trikot.metaviews.git', :tag => properties['trikot_viewmodels_version'], :inhibit_warnings => true
-  pod 'Trikot.streams', :git => 'git@github.com:mirego/trikot.streams.git', :tag => properties['trikot_streams_version'], :inhibit_warnings => true
-  pod 'Trikot.kword', :git => 'git@github.com:mirego/trikot.kword.git', :tag => properties['trikot_kword_version'], :inhibit_warnings => true
+  pod 'Trikot.http', :git => 'git@github.com:mirego/trikot.http.git', :tag => properties['trikot_http_version']
+  pod 'Trikot.viewmodels', :git => 'git@github.com:mirego/trikot.metaviews.git', :tag => properties['trikot_viewmodels_version']
+  pod 'Trikot.streams', :git => 'git@github.com:mirego/trikot.streams.git', :tag => properties['trikot_streams_version']
+  pod 'Trikot.kword', :git => 'git@github.com:mirego/trikot.kword.git',:tag => properties['trikot_kword_version']
 
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = platformVersion
+      end
+    end
+  end
 end
