@@ -1,7 +1,7 @@
 # Trikot.patron
 
-This repository is the stable base upon which we build our Elixir projects at Mirego.
-We want to share it with the world so you can build awesome Elixir applications too.
+This repository is the stable base upon which we build our mobile projects at Mirego.
+We want to share it with the world so you can build awesome mobile applications too.
 
 ## Usage
 
