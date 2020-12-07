@@ -84,7 +84,7 @@ kotlin {
             dependencies {
                 implementation 'org.jetbrains.kotlin:kotlin-test-common'
                 implementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
-                implementation "io.mockk:mockk-common:$mokk_version"
+                implementation "io.mockk:mockk-common:$mockk_version"
             }
         }
 
@@ -104,7 +104,7 @@ kotlin {
             dependencies {
                 implementation 'org.jetbrains.kotlin:kotlin-test'
                 implementation 'org.jetbrains.kotlin:kotlin-test-junit'
-                implementation "io.mockk:mockk:$mokk_version"
+                implementation "io.mockk:mockk:$mockk_version"
             }
         }
 
