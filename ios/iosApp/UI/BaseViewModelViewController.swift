@@ -11,6 +11,8 @@ class BaseViewModelViewController<V: BaseViewModelView<VM>, ND: BaseNavigationDe
     init(viewModelController: VMC) {
         self.viewModelController = viewModelController
         super.init(nibName: nil, bundle: nil)
+        
+        viewModelController.startConcurrencyTest(freezeTest: false, threadTest: true)
     }
 
     @available(*, unavailable)
