@@ -4,7 +4,6 @@ plugins {
     id("kotlin-kapt")
     id("kotlinx-serialization")
     id("org.jlleitschuh.gradle.ktlint")
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -65,6 +64,9 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = freeCompilerArgs +
+                "-Xopt-in=kotlin.time.ExperimentalTime" +
+                "-Xopt-in=kotlin.ExperimentalStdlibApi"
     }
 }
 
@@ -75,7 +77,6 @@ configurations.all {
 dependencies {
     api(project(":common"))
     implementation(Libs.KOTLIN_STDLIB)
-    implementation(Libs.KOTLINX_SERIALIZATION_RUNTIME)
     implementation(Libs.ANDROIDX_APP_COMPAT)
     implementation(Libs.ANDROIDX_CONSTRAINT_LAYOUT)
     implementation(Libs.ANDROIDX_LIFECYCLE_EXTENSIONS)
