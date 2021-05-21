@@ -92,7 +92,7 @@ kotlin {
                 api(Libs.Trikot(project).Viewmodels)
                 api(Libs.Trikot(project).Http)
                 api(Libs.Trikot(project).Kword)
-                api(Libs.Kotlinx.SerializationJson)
+                implementation(Libs.Kotlinx.SerializationJson)
             }
             kotlin.srcDir(kword.generatedDir)
         }
