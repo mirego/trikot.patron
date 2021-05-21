@@ -132,7 +132,7 @@ kotlin {
 // Xcode runs this task itself during its build process.
 // Before opening the project from iosApp directory in Xcode,
 // make sure all Gradle infrastructure exists (gradle.wrapper, gradlew).
-val copyFramework by tasks.creating(Copy::class) {
+val copyFramework by tasks.creating {
     val buildType = project.findProperty("kotlin.build.type")?.toString() ?: "RELEASE"
     val target = project.findProperty("kotlin.target")?.toString() ?: "iosArm64"
     val kotlinNativeTarget = kotlin.targets.getByName<KotlinNativeTarget>(target)
@@ -141,7 +141,7 @@ val copyFramework by tasks.creating(Copy::class) {
 
     doLast {
         val srcFile = framework.outputFile
-        val targetDir = property("configuration.build.dir")
+        val targetDir = project.property("configuration.build.dir")
         val frameworkDir = "${targetDir}/${Const.TRIKOT_FRAMEWORK_NAME}.framework"
         val translationDir = "${projectDir}/../common/src/commonMain/resources/translations"
         copy {
