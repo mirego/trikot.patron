@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import com.android.build.gradle.internal.dsl.TestOptions
 
 buildscript {
     dependencies {
@@ -16,12 +15,10 @@ plugins {
     id("kotlin-multiplatform")
     id("kotlinx-serialization")
     id("org.jlleitschuh.gradle.ktlint")
-    id("mirego.kword").version(Versions.TRIKOT_KWORD_PLUGIN)
+    id("mirego.kword") version Versions.TRIKOT_KWORD_PLUGIN
     id("jacoco")
+    id("com.github.nbaztec.coveralls-jacoco") version "1.2.12"
 }
-
-// We must use this approach to load the plugin since we enforced the exclusion of a transitive dependency
-apply(plugin = "com.github.nbaztec.coveralls-jacoco")
 
 repositories {
     google()
@@ -33,8 +30,6 @@ repositories {
     maven(url = "https://s3.amazonaws.com/mirego-maven/public")
 }
 
-//group("com.trikot.sample")
-
 android {
     compileSdkVersion(Versions.COMPILE_SDK)
     defaultConfig {
@@ -44,12 +39,6 @@ android {
         val main by getting {
             resources.srcDir("src/commonMain/resources/")
         }
-    }
-    testOptions {
-        unitTests(delegateClosureOf<TestOptions.UnitTestOptions> {
-            isReturnDefaultValues = true
-            isIncludeAndroidResources = true
-        })
     }
 }
 
@@ -159,46 +148,46 @@ val copyFramework by tasks.creating {
 }
 
 project.afterEvaluate {
-    project.tasks.filter { task -> task.name.startsWith("compile") && task.name.contains("Kotlin") }.forEach { task ->
-        task.dependsOn("kwordGenerateEnum")
-    }
+    project.tasks.filter { task -> task.name.startsWith("compile") && task.name.contains("Kotlin") }
+        .forEach { task ->
+            task.dependsOn("kwordGenerateEnum")
+        }
 }
 
-//jacoco {
-//    toolVersion = "0.8.2"
-//    reportsDir = file("build/reports")
-//}
-//
-//task jacocoTestReport(type: JacocoReport, dependsOn: "test") {
-//    group = "Reporting"
-//    description = "Generate Jacoco coverage reports"
-//
-//    reports {
-//        xml.enabled = true
-//        html.enabled = true
-//    }
-//
-//    def excludes = [
-//            '**/serializer.class',
-//            '**/factories**'
-//    ]
-//    getClassDirectories().setFrom(fileTree(
-//            dir: "build/intermediates/classes/debug",
-//            excludes: excludes
-//    ) + fileTree(
-//            dir: "build/tmp/kotlin-classes/debug",
-//            excludes: excludes
-//    ))
-//    getExecutionData().setFrom(files("build/jacoco/testDebugUnitTest.exec"))
-//    getSourceDirectories().setFrom(files([
-//            "src/commonMain/kotlin"
-//    ]))
-//}
-//tasks.find { it.name.find('coverallsJacoco') }.mustRunAfter jacocoTestReport
-//
-//coverallsJacoco {
-//    reportPath = "${buildDir}/reports/jacocoTestReport/jacocoTestReport.xml"
-//    reportSourceSets = files([
-//            "src/commonMain/kotlin"
-//    ])
-//}
+jacoco {
+    toolVersion = "0.8.2"
+    reportsDir = file("build/reports")
+}
+
+val jacocoTestReport by tasks.creating(JacocoReport::class) {
+    dependsOn("test")
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    reports {
+        xml.isEnabled = true
+        html.isEnabled = true
+    }
+
+    val excludes: (ConfigurableFileTree) -> Unit = {
+        it.exclude(
+            "**/serializer.class",
+            "**/factories**"
+        )
+    }
+    classDirectories.setFrom(
+        listOf(
+            fileTree("build/intermediates/classes/debug", excludes),
+            fileTree("build/tmp/kotlin-classes/debug", excludes)
+        )
+    )
+    executionData.setFrom(files("build/jacoco/testDebugUnitTest.exec"))
+    sourceDirectories.setFrom(files(listOf("src/commonMain/kotlin")))
+}
+
+tasks.find { it.name == "coverallsJacoco" }?.mustRunAfter(jacocoTestReport)
+
+coverallsJacoco {
+    reportPath = "${buildDir}/reports/jacocoTestReport/jacocoTestReport.xml"
+    reportSourceSets = files(listOf("src/commonMain/kotlin"))
+}
