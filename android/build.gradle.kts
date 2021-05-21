@@ -13,7 +13,7 @@ android {
         applicationId = "com.trikot.sample"
         versionCode = 1
         versionName = "1.0"
-//        archivesBaseName = "PatronProjectName-$versionCode"
+        versionName = "1.0"
 
         minSdkVersion(Versions.MIN_SDK)
         targetSdkVersion(Versions.TARGET_SDK)
