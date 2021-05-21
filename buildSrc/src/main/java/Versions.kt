@@ -1,4 +1,5 @@
 object Versions {
+
     const val COMPILE_SDK = 30
     const val TARGET_SDK = 30
     const val MIN_SDK = 21
@@ -11,11 +12,6 @@ object Versions {
     const val ANDROID_MATERIAL = "1.0.0"
     const val PICASSO = "2.71828"
 
-    const val TRIKOT_FOUNDATION = "2.1.0"
-    const val TRIKOT_STREAMS = "2.1.0"
-    const val TRIKOT_VIEWMODELS = "2.1.0"
-    const val TRIKOT_HTTP = "2.1.0"
-    const val TRIKOT_KWORD = "2.1.0"
     const val TRIKOT_KWORD_PLUGIN = "2.0.1"
 
     const val MOCKK = "1.11.0"

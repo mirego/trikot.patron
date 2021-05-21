@@ -76,13 +76,13 @@ configurations.all {
 
 dependencies {
     api(project(":common"))
-    implementation(Libs.KOTLIN_STDLIB)
-    implementation(Libs.ANDROIDX_APP_COMPAT)
-    implementation(Libs.ANDROIDX_CONSTRAINT_LAYOUT)
-    implementation(Libs.ANDROIDX_LIFECYCLE_EXTENSIONS)
-    implementation(Libs.ANDROIDX_LIFECYCLE_REACTIVE_STREAMS)
-    implementation(Libs.ANDROID_MATERIAL)
-    implementation(Libs.PICASSO)
+    implementation(Libs.Kotlin.Stdlib)
+    implementation(Libs.AndroidX.AppCompat)
+    implementation(Libs.AndroidX.ConstraintLayout)
+    implementation(Libs.AndroidX.LifecycleExtensions)
+    implementation(Libs.AndroidX.LifecycleReactiveStreams)
+    implementation(Libs.AndroidX.Material)
+    implementation(Libs.Picasso)
 }
 
 ktlint {

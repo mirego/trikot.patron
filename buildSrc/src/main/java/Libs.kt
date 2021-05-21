@@ -1,33 +1,45 @@
+import org.gradle.api.Project
+
 object Libs {
-    const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
-    const val KOTLINX_SERIALIZATION_JSON = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.KOTLINX_SERIALIZATION}"
+    object AndroidX {
+        const val AppCompat = "androidx.appcompat:appcompat:${Versions.ANDROID_APP_COMPAT}"
+        const val ConstraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.ANDROIDX_CONSTRAINT_LAYOUT}"
+        const val LifecycleExtensions =
+            "androidx.lifecycle:lifecycle-extensions:${Versions.ANDROIDX_LIFECYCLE}"
+        const val LifecycleViewModel =
+            "androidx.lifecycle:lifecycle-viewmodel:${Versions.ANDROIDX_LIFECYCLE}"
+        const val LifecycleViewModelKtx =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.ANDROIDX_LIFECYCLE}"
+        const val LifecycleReactiveStreams =
+            "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.ANDROIDX_LIFECYCLE}"
+        const val Material = "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
+    }
 
-    const val ANDROIDX_APP_COMPAT = "androidx.appcompat:appcompat:${Versions.ANDROID_APP_COMPAT}"
-    const val ANDROIDX_CONSTRAINT_LAYOUT =
-        "androidx.constraintlayout:constraintlayout:${Versions.ANDROIDX_CONSTRAINT_LAYOUT}"
-    const val ANDROIDX_LIFECYCLE_EXTENSIONS =
-        "androidx.lifecycle:lifecycle-extensions:${Versions.ANDROIDX_LIFECYCLE}"
-    const val ANDROIDX_LIFECYCLE_VIEWMODEL =
-        "androidx.lifecycle:lifecycle-viewmodel:${Versions.ANDROIDX_LIFECYCLE}"
-    const val ANDROIDX_LIFECYCLE_VIEWMODEL_KTX =
-        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.ANDROIDX_LIFECYCLE}"
-    const val ANDROIDX_LIFECYCLE_REACTIVE_STREAMS =
-        "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.ANDROIDX_LIFECYCLE}"
+    const val Picasso = "com.squareup.picasso:picasso:${Versions.PICASSO}"
 
-    const val ANDROID_MATERIAL = "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
-    const val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
+    class Trikot(project: Project) {
+        val Foundation = "com.mirego.trikot:trikotFoundation:${project.property("trikot_foundation_version")}"
+        val Streams = "com.mirego.trikot:streams:${project.property("trikot_streams_version")}"
+        val Viewmodels = "com.mirego.trikot:viewmodels:${project.property("trikot_viewmodels_version")}"
+        val Http = "com.mirego.trikot:http:${project.property("trikot_http_version")}"
+        val Kword = "com.mirego.trikot:kword:${project.property("trikot_kword_version")}"
+    }
 
-    const val TRIKOT_FOUNDATION = "com.mirego.trikot:trikotFoundation:${Versions.TRIKOT_FOUNDATION}"
-    const val TRIKOT_STREAMS = "com.mirego.trikot:streams:${Versions.TRIKOT_STREAMS}"
-    const val TRIKOT_VIEWMODELS = "com.mirego.trikot:viewmodels:${Versions.TRIKOT_VIEWMODELS}"
-    const val TRIKOT_HTTP = "com.mirego.trikot:http:${Versions.TRIKOT_HTTP}"
-    const val TRIKOT_KWORD = "com.mirego.trikot:kword:${Versions.TRIKOT_KWORD}"
+    object Kotlin {
+        const val Stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+        const val TestCommon = "org.jetbrains.kotlin:kotlin-test-common"
+        const val TestAnnotationCommon = "org.jetbrains.kotlin:kotlin-test-annotations-common"
+        const val Test = "org.jetbrains.kotlin:kotlin-test"
+        const val TestJUnit = "org.jetbrains.kotlin:kotlin-test-junit"
+    }
 
-    const val KOTLIN_TEST_COMMON = "org.jetbrains.kotlin:kotlin-test-common"
-    const val KOTLIN_TEST_ANNOTATION_COMMON = "org.jetbrains.kotlin:kotlin-test-annotations-common"
-    const val KOTLIN_TEST = "org.jetbrains.kotlin:kotlin-test"
-    const val KOTLIN_TEST_JUNIT = "org.jetbrains.kotlin:kotlin-test-junit"
+    object Kotlinx {
+        const val SerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.KOTLINX_SERIALIZATION}"
+    }
 
-    const val MOCKK_COMMON = "io.mockk:mockk-common:${Versions.MOCKK}"
-    const val MOCKK =  "io.mockk:mockk:${Versions.MOCKK}"
+    object Mockk {
+        const val Common = "io.mockk:mockk-common:${Versions.MOCKK}"
+        const val Mockk =  "io.mockk:mockk:${Versions.MOCKK}"
+    }
 }

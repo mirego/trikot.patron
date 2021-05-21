@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import com.android.build.gradle.internal.dsl.TestOptions
 
 buildscript {
     dependencies {
@@ -44,12 +45,12 @@ android {
             resources.srcDir("src/commonMain/resources/")
         }
     }
-//    testOptions {
-//        unitTests {
-//            isReturnDefaultValues = true
-//            isIncludeAndroidResources = true
-//        }
-//    }
+    testOptions {
+        unitTests(delegateClosureOf<TestOptions.UnitTestOptions> {
+            isReturnDefaultValues = true
+            isIncludeAndroidResources = true
+        })
+    }
 }
 
 kword {
@@ -69,11 +70,11 @@ kotlin {
                 embedBitcode("disable")
                 baseName = Const.TRIKOT_FRAMEWORK_NAME
                 transitiveExport = true
-                export(Libs.TRIKOT_FOUNDATION)
-                export(Libs.TRIKOT_STREAMS)
-                export(Libs.TRIKOT_VIEWMODELS)
-                export(Libs.TRIKOT_HTTP)
-                export(Libs.TRIKOT_KWORD)
+                export(Libs.Trikot(project).Foundation)
+                export(Libs.Trikot(project).Streams)
+                export(Libs.Trikot(project).Viewmodels)
+                export(Libs.Trikot(project).Http)
+                export(Libs.Trikot(project).Kword)
             }
         }
     }
@@ -86,37 +87,37 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                api(Libs.TRIKOT_FOUNDATION)
-                api(Libs.TRIKOT_STREAMS)
-                api(Libs.TRIKOT_VIEWMODELS)
-                api(Libs.TRIKOT_HTTP)
-                api(Libs.TRIKOT_KWORD)
-                api(Libs.KOTLINX_SERIALIZATION_JSON)
+                api(Libs.Trikot(project).Foundation)
+                api(Libs.Trikot(project).Streams)
+                api(Libs.Trikot(project).Viewmodels)
+                api(Libs.Trikot(project).Http)
+                api(Libs.Trikot(project).Kword)
+                api(Libs.Kotlinx.SerializationJson)
             }
             kotlin.srcDir(kword.generatedDir)
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(Libs.KOTLIN_TEST_COMMON)
-                implementation(Libs.KOTLIN_TEST_ANNOTATION_COMMON)
-                implementation(Libs.MOCKK_COMMON)
+                implementation(Libs.Kotlin.TestCommon)
+                implementation(Libs.Kotlin.TestAnnotationCommon)
+                implementation(Libs.Mockk.Common)
             }
         }
 
         val androidMain by getting {
             dependsOn(commonMain)
             dependencies {
-                implementation(Libs.ANDROIDX_LIFECYCLE_VIEWMODEL)
-                implementation(Libs.ANDROIDX_LIFECYCLE_VIEWMODEL_KTX)
+                implementation(Libs.AndroidX.LifecycleViewModel)
+                implementation(Libs.AndroidX.LifecycleViewModelKtx)
             }
         }
 
         val androidTest by getting {
             dependencies {
-                implementation(Libs.KOTLIN_TEST)
-                implementation(Libs.KOTLIN_TEST_JUNIT)
-                implementation(Libs.MOCKK)
+                implementation(Libs.Kotlin.Test)
+                implementation(Libs.Kotlin.TestJUnit)
+                implementation(Libs.Mockk.Mockk)
             }
         }
 
