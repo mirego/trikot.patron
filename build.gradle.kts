@@ -10,7 +10,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
         classpath("org.jetbrains.kotlin:kotlin-serialization:${Versions.KOTLIN}")
         classpath("com.google.gms:google-services:4.3.4")
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:9.1.1")
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.0.0")
     }
 }
 

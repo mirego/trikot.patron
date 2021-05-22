@@ -131,8 +131,8 @@ val copyFramework by tasks.creating {
     doLast {
         val srcFile = framework.outputFile
         val targetDir = project.property("configuration.build.dir")
-        val frameworkDir = "${targetDir}/${Const.TRIKOT_FRAMEWORK_NAME}.framework"
-        val translationDir = "${projectDir}/../common/src/commonMain/resources/translations"
+        val frameworkDir = "$targetDir/${Const.TRIKOT_FRAMEWORK_NAME}.framework"
+        val translationDir = "$projectDir/../common/src/commonMain/resources/translations"
         copy {
             from(srcFile.parent)
             into(targetDir)
@@ -188,6 +188,6 @@ val jacocoTestReport by tasks.creating(JacocoReport::class) {
 tasks.find { it.name == "coverallsJacoco" }?.mustRunAfter(jacocoTestReport)
 
 coverallsJacoco {
-    reportPath = "${buildDir}/reports/jacocoTestReport/jacocoTestReport.xml"
+    reportPath = "$buildDir/reports/jacocoTestReport/jacocoTestReport.xml"
     reportSourceSets = files(listOf("src/commonMain/kotlin"))
 }
