@@ -21,7 +21,7 @@ DEPENDENCIES:
   - "Trikot.http (from `git@github.com:mirego/trikot.http.git`, tag `2.1.0`)"
   - "Trikot.kword (from `git@github.com:mirego/trikot.kword.git`, tag `2.1.0`)"
   - "Trikot.streams (from `git@github.com:mirego/trikot.streams.git`, tag `2.1.0`)"
-  - "Trikot.viewmodels (from `git@github.com:mirego/trikot.viewmodels.git`, tag `2.1.0`)"
+  - "Trikot.viewmodels (from `git@github.com:mirego/trikot.viewmodels.git`, tag `2.1.1`)"
   - TrikotFrameworkName (from `../common`)
 
 SPEC REPOS:
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
     :tag: 2.1.0
   Trikot.viewmodels:
     :git: "git@github.com:mirego/trikot.viewmodels.git"
-    :tag: 2.1.0
+    :tag: 2.1.1
   TrikotFrameworkName:
     :path: "../common"
 
@@ -57,7 +57,7 @@ CHECKOUT OPTIONS:
     :tag: 2.1.0
   Trikot.viewmodels:
     :git: "git@github.com:mirego/trikot.viewmodels.git"
-    :tag: 2.1.0
+    :tag: 2.1.1
 
 SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
