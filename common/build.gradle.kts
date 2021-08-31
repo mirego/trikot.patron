@@ -12,9 +12,8 @@ buildscript {
 
 plugins {
     id("com.android.library")
-    id("kotlin-multiplatform")
-    id("kotlinx-serialization")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("org.jetbrains.kotlin.multiplatform").version("1.6.0-M1-139")
+    id("org.jlleitschuh.gradle.ktlint").version("10.1.0")
     id("mirego.kword") version Versions.TRIKOT_KWORD_PLUGIN
     id("jacoco")
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.12"
@@ -22,10 +21,8 @@ plugins {
 
 repositories {
     google()
-    jcenter()
     mavenCentral()
     mavenLocal()
-    maven(url = "https://kotlin.bintray.com/kotlinx")
     maven(url = "https://jitpack.io")
     maven(url = "https://s3.amazonaws.com/mirego-maven/public")
 }

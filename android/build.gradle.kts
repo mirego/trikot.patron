@@ -1,9 +1,7 @@
 plugins {
-    id("com.android.application")
     id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlinx-serialization")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("org.jetbrains.kotlin.kapt").version("1.6.0-M1-139")
+    id("org.jlleitschuh.gradle.ktlint").version("10.1.0")
 }
 
 android {
