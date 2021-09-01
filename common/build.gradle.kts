@@ -13,6 +13,7 @@ buildscript {
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.multiplatform").version("1.6.0-M1-139")
+//    id("kotlinx-serialization")
     id("org.jlleitschuh.gradle.ktlint").version("10.1.0")
     id("mirego.kword") version Versions.TRIKOT_KWORD_PLUGIN
     id("jacoco")

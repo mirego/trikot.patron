@@ -26,4 +26,4 @@ pluginManagement {
 
 rootProject.name = "TrikotSample"
 
-include(":common")
+include(/*":android", */":common")
