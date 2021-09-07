@@ -26,6 +26,7 @@ repositories {
     mavenLocal()
     maven(url = "https://jitpack.io")
     maven(url = "https://s3.amazonaws.com/mirego-maven/public")
+
 }
 
 android {
@@ -60,7 +61,7 @@ kotlin {
                 export(SharedLibs.Trikot.Foundation)
                 export(SharedLibs.Trikot.Streams)
                 export(SharedLibs.Trikot.Viewmodels)
-                export(SharedLibs.Trikot.Http)
+//                export(SharedLibs.Trikot.Http)
                 export(SharedLibs.Trikot.Kword)
             }
         }
@@ -68,8 +69,9 @@ kotlin {
 
     sourceSets {
         all {
-            languageSettings.useExperimentalAnnotation("kotlin.Experimental")
-            languageSettings.useExperimentalAnnotation("kotlin.time.ExperimentalTime")
+            languageSettings.optIn("kotlin.Experimental")
+            languageSettings.optIn("kotlin.time.ExperimentalTime")
+            languageSettings.optIn("kotlinx.coroutines.DelicateCoroutinesApi")
         }
 
         val commonMain by getting {
@@ -77,9 +79,12 @@ kotlin {
                 api(SharedLibs.Trikot.Foundation)
                 api(SharedLibs.Trikot.Streams)
                 api(SharedLibs.Trikot.Viewmodels)
-                api(SharedLibs.Trikot.Http)
+//                api(SharedLibs.Trikot.Http)
                 api(SharedLibs.Trikot.Kword)
+                implementation(Libs.Kotlinx.Coroutines)
                 implementation(Libs.Kotlinx.SerializationJson)
+                implementation(Libs.Ktor.Common)
+                implementation(Libs.Ktor.Serialization)
             }
             kotlin.srcDir(kword.generatedDir)
         }
@@ -97,6 +102,7 @@ kotlin {
             dependencies {
                 implementation(Libs.AndroidX.LifecycleViewModel)
                 implementation(Libs.AndroidX.LifecycleViewModelKtx)
+                implementation(Libs.Ktor.Android)
             }
         }
 
@@ -110,6 +116,9 @@ kotlin {
 
         val iosMain by getting {
             dependsOn(commonMain)
+            dependencies {
+                implementation(Libs.Ktor.Ios)
+            }
         }
     }
 }
@@ -133,7 +142,7 @@ val copyFramework by tasks.creating {
         val translationDir = "$projectDir/../common/src/commonMain/resources/translations"
         copy {
             from(srcFile.parent)
-            into(targetDir)
+            into(targetDir!!)
             include("${Const.TRIKOT_FRAMEWORK_NAME}.framework/**")
             include("${Const.TRIKOT_FRAMEWORK_NAME}.framework.dSYM/**")
         }

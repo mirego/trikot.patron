@@ -14,7 +14,7 @@ target 'iosApp' do
 
   pod 'SwiftLint'
   pod 'TrikotFrameworkName', :path => '../common'
-  pod 'Trikot.http', :path => '../../trikot.http'
+#   pod 'Trikot.http', :path => '../../trikot.http'
   pod 'Trikot.viewmodels', :path => '../../trikot.viewmodels'
   pod 'Trikot.streams', :path => '../../trikot.streams'
   pod 'Trikot.kword', :git => 'git@github.com:mirego/trikot.kword.git', :tag => properties['trikot_kword_version'], :inhibit_warnings => true

@@ -80,7 +80,6 @@ dependencies {
     implementation(Libs.AndroidX.LifecycleExtensions)
     implementation(Libs.AndroidX.LifecycleReactiveStreams)
     implementation(Libs.AndroidX.Material)
-    implementation(Libs.Picasso)
 }
 
 ktlint {

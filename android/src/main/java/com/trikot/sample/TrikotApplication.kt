@@ -16,8 +16,8 @@ class TrikotApplication : Application() {
         ImageViewModelResourceManager.provider = SampleImageResourceProvider()
         Environment.flavor = Environment.Flavor.valueOf(BuildConfig.BUILD_TYPE.toUpperCase())
 
-        HttpConfiguration.connectivityPublisher = AndroidConnectivityPublisher(this)
-            .distinctUntilChanged()
-        HttpConfiguration.httpRequestFactory = KtorHttpRequestFactory()
+//        HttpConfiguration.connectivityPublisher = AndroidConnectivityPublisher(this)
+//            .distinctUntilChanged()
+//        HttpConfiguration.httpRequestFactory = KtorHttpRequestFactory()
     }
 }

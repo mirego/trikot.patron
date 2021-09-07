@@ -31,8 +31,6 @@ object Libs {
         const val Material = "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
     }
 
-    const val Picasso = "com.squareup.picasso:picasso:${Versions.PICASSO}"
-
     object Kotlin {
         const val Stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
         const val TestCommon = "org.jetbrains.kotlin:kotlin-test-common"
@@ -42,8 +40,17 @@ object Libs {
     }
 
     object Kotlinx {
+        const val Coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLINX_COROUTINES}"
         const val SerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.KOTLINX_SERIALIZATION}"
     }
+
+    object Ktor {
+        const val Common = "io.ktor:ktor-client-core:${Versions.KTOR}"
+        const val Android = "io.ktor:ktor-client-android:${Versions.KTOR}"
+        const val Ios = "io.ktor:ktor-client-ios:${Versions.KTOR}"
+        const val Serialization = "io.ktor:ktor-client-serialization:${Versions.KTOR}"
+    }
+
 
     object Mockk {
         const val Common = "io.mockk:mockk-common:${Versions.MOCKK}"

@@ -1,4 +1,3 @@
-import Trikot_http
 import Trikot_kword
 import Trikot_viewmodels
 import TrikotFrameworkName
@@ -11,8 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //swiftlint:disable discouraged_optional_collection
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Environment().flavor = currentFlavor()
-        HttpConfiguration().httpRequestFactory = TrikotHttpRequestFactory()
-        HttpConfiguration().connectivityPublisher = TrikotConnectivityService.shared.publisher
+//        HttpConfiguration().httpRequestFactory = TrikotHttpRequestFactory()
+//        HttpConfiguration().connectivityPublisher = TrikotConnectivityService.shared.publisher
         ImageViewModelResourceManager.shared = SampleImageResourceProvider()
         TrikotKword.shared.setCurrentLanguage("en")
 
@@ -27,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        TrikotConnectivityService.shared.stop()
+//        TrikotConnectivityService.shared.stop()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -36,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {}
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        TrikotConnectivityService.shared.start()
+//        TrikotConnectivityService.shared.start()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}
