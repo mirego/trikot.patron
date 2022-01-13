@@ -68,6 +68,12 @@ android {
             "-Xopt-in=kotlin.time.ExperimentalTime" +
             "-Xopt-in=kotlin.ExperimentalStdlibApi"
     }
+
+    sourceSets {
+        getByName("main") {
+            resources.srcDir("../common/src/commonMain/resources/")
+        }
+    }
 }
 
 configurations.all {

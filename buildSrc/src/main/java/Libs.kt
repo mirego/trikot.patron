@@ -7,11 +7,11 @@ class SharedLibs(private val project: Project) {
     val Trikot = InnerTrikot()
 
     inner class InnerTrikot {
-        val Foundation = "com.mirego.trikot:trikotFoundation:${project.property("trikot_foundation_version")}"
-        val Streams = "com.mirego.trikot:streams:${project.property("trikot_streams_version")}"
-        val Viewmodels = "com.mirego.trikot:viewmodels:${project.property("trikot_viewmodels_version")}"
-        val Http = "com.mirego.trikot:http:${project.property("trikot_http_version")}"
-        val Kword = "com.mirego.trikot:kword:${project.property("trikot_kword_version")}"
+        val Foundation = "com.mirego.trikot:trikotFoundation:${project.property("trikot_version")}"
+        val Streams = "com.mirego.trikot:streams:${project.property("trikot_version")}"
+        val Viewmodels = "com.mirego.trikot:viewmodels:${project.property("trikot_version")}"
+        val Http = "com.mirego.trikot:http:${project.property("trikot_version")}"
+        val Kword = "com.mirego.trikot:kword:${project.property("trikot_version")}"
     }
 }
 

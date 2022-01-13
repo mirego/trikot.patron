@@ -21,10 +21,9 @@ plugins {
 }
 
 repositories {
-    google()
-    jcenter()
-    mavenCentral()
     mavenLocal()
+    google()
+    mavenCentral()
     maven(url = "https://kotlin.bintray.com/kotlinx")
     maven(url = "https://jitpack.io")
     maven(url = "https://s3.amazonaws.com/mirego-maven/public")
@@ -34,11 +33,6 @@ android {
     compileSdkVersion(Versions.COMPILE_SDK)
     defaultConfig {
         minSdkVersion(Versions.MIN_SDK)
-    }
-    sourceSets {
-        val main by getting {
-            resources.srcDir("src/commonMain/resources/")
-        }
     }
 }
 

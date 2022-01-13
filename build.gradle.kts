@@ -1,33 +1,30 @@
 buildscript {
     repositories {
+        mavenLocal()
         google()
-        jcenter()
         maven(url = "https://plugins.gradle.org/m2/")
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.1")
+        classpath("com.android.tools.build:gradle:${Versions.ANDROID_GRADLE_PLUGIN}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
         classpath("org.jetbrains.kotlin:kotlin-serialization:${Versions.KOTLIN}")
-        classpath("com.google.gms:google-services:4.3.8")
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.0.0")
+        classpath("com.google.gms:google-services:4.3.10")
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.KTLINT}")
     }
-}
-
-repositories {
-    google()
-    jcenter()
 }
 
 allprojects {
     buildscript {
         repositories {
+            mavenLocal()
             google()
+            mavenCentral()
         }
     }
     repositories {
-        google()
-        jcenter()
         mavenLocal()
+        google()
+        mavenCentral()
     }
 }
