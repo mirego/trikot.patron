@@ -1,6 +1,4 @@
-import Trikot_http
-import Trikot_kword
-import Trikot_viewmodels
+import Trikot
 import TrikotFrameworkName
 import UIKit
 
