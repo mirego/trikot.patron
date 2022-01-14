@@ -14,7 +14,7 @@ object Versions {
     const val ANDROID_MATERIAL = "1.0.0"
     const val PICASSO = "2.71828"
 
-    const val TRIKOT_KWORD_PLUGIN = "3.0.0-SNAPSHOT"
+    const val TRIKOT_KWORD_PLUGIN = "3.0.0"
 
     const val MOCKK = "1.11.0"
 }

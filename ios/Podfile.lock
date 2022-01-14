@@ -15,10 +15,10 @@ PODS:
 
 DEPENDENCIES:
   - SwiftLint
-  - "Trikot/http (from `git@github.com:mirego/trikot.git`, tag `3.0.0-SNAPSHOT`)"
-  - "Trikot/kword (from `git@github.com:mirego/trikot.git`, tag `3.0.0-SNAPSHOT`)"
-  - "Trikot/streams (from `git@github.com:mirego/trikot.git`, tag `3.0.0-SNAPSHOT`)"
-  - "Trikot/viewmodels (from `git@github.com:mirego/trikot.git`, tag `3.0.0-SNAPSHOT`)"
+  - "Trikot/http (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
+  - "Trikot/kword (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
+  - "Trikot/streams (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
+  - "Trikot/viewmodels (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
   - TrikotFrameworkName (from `../common`)
 
 SPEC REPOS:
@@ -29,14 +29,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Trikot:
     :git: "git@github.com:mirego/trikot.git"
-    :tag: 3.0.0-SNAPSHOT
+    :tag: 3.0.0
   TrikotFrameworkName:
     :path: "../common"
 
 CHECKOUT OPTIONS:
   Trikot:
     :git: "git@github.com:mirego/trikot.git"
-    :tag: 3.0.0-SNAPSHOT
+    :tag: 3.0.0
 
 SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
