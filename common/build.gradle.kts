@@ -24,7 +24,6 @@ repositories {
     mavenLocal()
     google()
     mavenCentral()
-    maven(url = "https://kotlin.bintray.com/kotlinx")
     maven(url = "https://jitpack.io")
     maven(url = "https://s3.amazonaws.com/mirego-maven/public")
 }
