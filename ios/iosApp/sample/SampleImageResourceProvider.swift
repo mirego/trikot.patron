@@ -1,5 +1,5 @@
 import Foundation
-import Trikot_viewmodels
+import Trikot
 import TrikotFrameworkName
 
 class SampleImageResourceProvider: ImageViewModelResourceProvider {
