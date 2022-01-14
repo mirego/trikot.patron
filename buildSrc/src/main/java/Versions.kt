@@ -6,6 +6,7 @@ object Versions {
 
     const val KOTLIN = "1.5.31"
     const val ANDROID_GRADLE_PLUGIN = "7.1.0-rc01"
+    const val GOOGLE_SERVICES_PLUGIN = "4.3.10"
     const val KTLINT = "10.2.0"
     const val KOTLINX_SERIALIZATION = "1.1.0"
     const val ANDROID_APP_COMPAT = "1.2.0"
