@@ -11,7 +11,7 @@ class FetchQuoteUseCaseImpl(private val quoteRepo: QuoteRepository) :
     FetchQuoteUseCase {
     override fun fetchQuote(): Publisher<String> {
         return quoteRepo.getQuotes()
-            .map { it.firstOrNull()?.quote ?: "No quotes" }
+            .map { it.randomOrNull()?.text ?: "No quotes" }
             .onErrorReturn { it.message ?: "Unknown error occurred" }
             .shared()
     }

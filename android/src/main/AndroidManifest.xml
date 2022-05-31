@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

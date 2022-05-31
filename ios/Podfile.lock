@@ -1,24 +1,24 @@
 PODS:
   - ReachabilitySwift (5.0.0)
   - SwiftLint (0.39.2)
-  - Trikot/http (1.0.0):
+  - Trikot/http (3.3.3):
     - ReachabilitySwift (~> 5.0)
     - TrikotFrameworkName
-  - Trikot/kword (1.0.0):
+  - Trikot/kword (3.3.3):
     - TrikotFrameworkName
-  - Trikot/streams (1.0.0):
+  - Trikot/streams (3.3.3):
     - TrikotFrameworkName
-  - Trikot/viewmodels (1.0.0):
+  - Trikot/viewmodels (3.3.3):
     - Trikot/streams
     - TrikotFrameworkName
-  - TrikotFrameworkName (0.0.1)
+  - TrikotFrameworkName (1.0.0)
 
 DEPENDENCIES:
   - SwiftLint
-  - "Trikot/http (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
-  - "Trikot/kword (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
-  - "Trikot/streams (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
-  - "Trikot/viewmodels (from `git@github.com:mirego/trikot.git`, tag `3.0.0`)"
+  - "Trikot/http (from `git@github.com:mirego/trikot.git`, tag `3.3.3`)"
+  - "Trikot/kword (from `git@github.com:mirego/trikot.git`, tag `3.3.3`)"
+  - "Trikot/streams (from `git@github.com:mirego/trikot.git`, tag `3.3.3`)"
+  - "Trikot/viewmodels (from `git@github.com:mirego/trikot.git`, tag `3.3.3`)"
   - TrikotFrameworkName (from `../common`)
 
 SPEC REPOS:
@@ -29,20 +29,20 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Trikot:
     :git: "git@github.com:mirego/trikot.git"
-    :tag: 3.0.0
+    :tag: 3.3.3
   TrikotFrameworkName:
     :path: "../common"
 
 CHECKOUT OPTIONS:
   Trikot:
     :git: "git@github.com:mirego/trikot.git"
-    :tag: 3.0.0
+    :tag: 3.3.3
 
 SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
-  Trikot: ad053a2f4a4903a973729e6e70e8c4f2f159666b
-  TrikotFrameworkName: e7784bc239a138d44a680bf58ac8cd46290906cf
+  Trikot: fe10e97e43bf0ac624b3ac92a2b1d5b955c34444
+  TrikotFrameworkName: d0d26ed18a715c0d432cf37470364b7098b025f4
 
 PODFILE CHECKSUM: 6a8683a9715cb46f8d61fd61791deda2e19d3751
 

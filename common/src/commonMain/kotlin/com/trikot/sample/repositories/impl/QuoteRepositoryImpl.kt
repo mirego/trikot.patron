@@ -12,8 +12,8 @@ class QuoteRepositoryImpl() : QuoteRepository {
     override fun getQuotes(): Publisher<List<Quote>> {
         return ColdPublisher { cancellableManager ->
             val request = RequestBuilder().also {
-                it.baseUrl = "https://breaking-bad-quotes.herokuapp.com"
-                it.path = "/v1/quotes/5"
+                it.baseUrl = "https://type.fit/api"
+                it.path = "/quotes"
             }
 
             DeserializableHttpRequestPublisher(ListSerializer(Quote.serializer()), request).also {
