@@ -7,16 +7,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.COMPILE_SDK)
-
     defaultConfig {
         applicationId = "com.trikot.sample"
         versionCode = 1
         versionName = "1.0"
         versionName = "1.0"
 
-        minSdkVersion(Versions.MIN_SDK)
-        targetSdkVersion(Versions.TARGET_SDK)
+        compileSdk = Versions.COMPILE_SDK
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,9 +46,9 @@ android {
         dataBinding = true
     }
 
-    lintOptions {
-        isCheckReleaseBuilds = true
-        isAbortOnError = true
+    lint {
+        checkReleaseBuilds = true
+        abortOnError = true
     }
 
     compileOptions {

@@ -21,7 +21,7 @@ object Libs {
         const val ConstraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.ANDROIDX_CONSTRAINT_LAYOUT}"
         const val LifecycleExtensions =
-            "androidx.lifecycle:lifecycle-extensions:${Versions.ANDROIDX_LIFECYCLE}"
+            "androidx.lifecycle:lifecycle-extensions:${Versions.ANDROIDX_LIFECYCLE_EXTENSIONS}"
         const val LifecycleViewModel =
             "androidx.lifecycle:lifecycle-viewmodel:${Versions.ANDROIDX_LIFECYCLE}"
         const val LifecycleViewModelKtx =

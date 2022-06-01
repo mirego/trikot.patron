@@ -1,55 +1,39 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'TrikotFrameworkName'
-    spec.version                  = '0.0.1'
+    spec.version                  = '1.0.0'
     spec.homepage                 = 'www.mirego.com'
-    spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
+    spec.source                   = { :http=> ''}
     spec.authors                  = ''
-    spec.license                  = 'No license'
-    spec.summary                  = 'Awesome library'
-
-    spec.static_framework         = true
-    spec.vendored_frameworks      = "build/bin/TrikotFrameworkName.framework"
-    spec.libraries                = "c++", "System"
-    spec.module_name              = "#{spec.name}_umbrella"
-
+    spec.license                  = 'BSD-3'
+    spec.summary                  = 'Trikot.Patron'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/TrikotFrameworkName.framework'
+    spec.libraries                = 'c++'
+                
+                
+                
     spec.pod_target_xcconfig = {
-        'KOTLIN_BUILD_TYPE[config=Debug]' => 'DEBUG',
-        'KOTLIN_BUILD_TYPE[config=Release]' => 'RELEASE',
-        'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'iosX64',
-        'KOTLIN_TARGET[sdk=iphoneos*]' => 'iosArm64',
-        'KOTLIN_TARGET[sdk=appletvos*]' => 'tvosArm64',
-        'KOTLIN_TARGET[sdk=appletvsimulator*]' => 'tvosX64'
+        'KOTLIN_PROJECT_PATH' => ':common',
+        'PRODUCT_MODULE_NAME' => 'TrikotFrameworkName',
     }
-
-    spec.prepare_command = <<-CMD
-        ../gradlew :common:copyFramework -Pconfiguration.build.dir="build/bin/ios"
-    CMD
-
+                
     spec.script_phases = [
         {
-            :name => 'Build common',
+            :name => 'Build TrikotFrameworkName',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
-if [ "$ENABLE_PREVIEWS" = "NO" ]
-then
-  echo "Building common framework"
-
-  cd "$SRCROOT/../.."
-  pwd
-  FILE=.env.sh
-  if [ -f $FILE ]; then
-    source .env.sh
-  fi
-
-  ./gradlew :common:copyFramework \
-    -Pconfiguration.build.dir="build/bin" \
-    -Pkotlin.build.type="$KOTLIN_BUILD_TYPE" \
-    -Pkotlin.target="$KOTLIN_TARGET"
-else
-  echo "Skipping build of common framework in preview mode"
-fi
+                if [ "YES" = "$COCOAPODS_SKIP_KOTLIN_BUILD" ]; then
+                  echo "Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\""
+                  exit 0
+                fi
+                set -ev
+                REPO_ROOT="$PODS_TARGET_SRCROOT"
+                "$REPO_ROOT/../gradlew" -p "$REPO_ROOT" $KOTLIN_PROJECT_PATH:syncFramework \
+                    -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME \
+                    -Pkotlin.native.cocoapods.archs="$ARCHS" \
+                    -Pkotlin.native.cocoapods.configuration="$CONFIGURATION"
             SCRIPT
         }
     ]
+    spec.resources = "src/commonMain/resources/translations/*"
 end
