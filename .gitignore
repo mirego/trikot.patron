@@ -88,7 +88,7 @@ com_crashlytics_export_strings.xml
 generated-model
 generated-src
 generated-objc
-Core.podspec
+TrikotFrameworkName.podspec
 /common/src/commonMain/generated
 
 # Kotlin JS compilation files
