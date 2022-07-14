@@ -2,12 +2,12 @@ import TrikotFrameworkName
 import UIKit
 
 class HomeViewController: BaseViewModelViewController<
-	HomeView,
-	BaseNavigationDelegate,
-	HomeViewModel,
-	HomeViewModelController
+    HomeView,
+    BaseNavigationDelegate,
+    HomeViewModel,
+    HomeViewModelController
 > {
-	init() {
-		super.init(viewModelController: Core.shared.viewModelControllerFactory.createHome())
-	}
+    init() {
+        super.init(viewModelController: Core.shared.viewModelControllerFactory.createHome())
+    }
 }

@@ -126,7 +126,6 @@ curl https://fcm.googleapis.com/fcm/send -X POST \
 
 4. XCode Setup (Preferences)
   - XCode -> Preferences... ~> Text Editing ~> Display => Uncheck 'Wrap lines to editor width'
-  - XCode -> Preferences... ~> Text Editing ~> Indentation => Select 'Prefer Indent Using': Tabs
 
 #### Run
 

@@ -28,7 +28,7 @@
 --hexliteralcase uppercase
 --ifdef indent
 --importgrouping alpha
---indent tab
+--indent 4
 --indentcase true
 --indentstrings false
 --lifecycle 
