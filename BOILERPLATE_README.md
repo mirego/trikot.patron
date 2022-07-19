@@ -102,7 +102,41 @@ curl https://fcm.googleapis.com/fcm/send -X POST \
     - Create a `.podspec` file
     - Install project dependencies (including `core`)
 - Open the workspace (`!!ProjectName!!.xcworkspace`)
-- Run the project by selecting `Product > Run` 
+- Run the project by selecting `Product > Run`
+
+### 📝 [SwiftFormat](https://github.com/nicklockwood/SwiftFormat)
+
+#### Requirements
+- [Homebrew](https://brew.sh)
+
+#### Setup
+
+1. Installation
+  - Run `brew install swiftformat`
+  - Run `brew install --cask swiftformat-for-xcode`
+
+2. SwiftFormat for XCode (Desktop App) Setup
+  - Open SwiftFormat for XCode
+  - File -> Open... ~> Open "./ios/[.swiftformat](ios/.swiftformat)"
+
+3. XCode Setup (FormatOnSave)
+  - XCode -> Preferences... ~> Key Bindings
+  - Search for "format"
+  - Add "Cmd+S" to "SwiftFormat - Format File (Editor Menu for Source Code)"
+
+4. XCode Setup (Preferences)
+  - XCode -> Preferences... ~> Text Editing ~> Display => Uncheck 'Wrap lines to editor width'
+
+#### Run
+
+1. Run for whole project
+  - Run `source runswiftformat.sh` to run "./ios/[runswiftformat.sh](ios/runswiftformat.sh)
+2. Run from XCode
+  - Editor -> SwiftFormat ~> Format File (Should run on save if installation step 3 succeeded)
+
+#### Notes
+
+- Need to repeat installation step 2 if the .swiftformat file was modified directly, the app/xcode extension doesn't update automatically.
 
 # 🚀 Environments and deployment
 - !!Link to the jenkins job!!

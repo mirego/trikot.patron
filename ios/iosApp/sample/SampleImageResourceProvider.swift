@@ -3,7 +3,7 @@ import Trikot
 import TrikotFrameworkName
 
 class SampleImageResourceProvider: ImageViewModelResourceProvider {
-    func image(fromResource resource: ImageResource?) -> UIImage? {
+    func image(fromResource _: ImageResource?) -> UIImage? {
         nil
     }
 }

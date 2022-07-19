@@ -8,8 +8,7 @@ class BaseViewModelView<VM: ViewModel>: UIView {
         super.init(frame: frame)
     }
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    @available(*, unavailable) required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
