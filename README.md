@@ -1,5 +1,12 @@
-# Trikot.patron
+<hr/>
 
+# ⚠️ Deprecation warning
+
+This project has been deprecated in favor of our latest [kmp-boilerplate](https://github.com/mirego/kmp-boilerplate).
+
+<hr/>
+
+# Trikot.patron 
 This repository is the stable base upon which we build our mobile projects at Mirego.
 We want to share it with the world so you can build awesome mobile applications too.
 
